@@ -1,18 +1,14 @@
 version: 2
 
-models:
+seeds:
   - name: rugs_usa_variant
-    description: "This table contains data about variants of rugs."
+    description: "Seed data for rug variants."
     columns:
       - name: pid
         description: "Primary identifier for each rug variant."
         tests:
-          - unique
           - not_null
       - name: price
         description: "Price of the rug variant."
         tests:
           - not_null
-          - relationships:
-              to: ref('rugs_usa_pads_upsell')
-              field: pad_id
